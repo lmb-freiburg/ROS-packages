@@ -1,0 +1,24 @@
+<launch>
+  <node pkg="LMB_sceneflow"
+        type="sceneflow"
+        name="LMB_sceneflow"
+        clear_params="true"
+        output="screen"
+  >
+    <!-- Options: adjacent-frames, to-first-frame -->
+    <param name="mode" type="string" value="adjacent-frames"/>
+    <param name="invert_cx" type="bool" value="true"/>
+    <param name="invert_cy" type="bool" value="true"/>
+    <param name="verbosity" type="int" value="1"/>
+  </node>
+
+  <remap from="/uvc_cam1_rect_mono/camera_info" to="LMB__sceneflow_left/camera_info"/>
+  <remap from="/uvc_cam1_rect_mono" to="LMB__sceneflow_left"/>
+  <remap from="/uvc_cam0_rect_mono" to="LMB__sceneflow_right"/>
+
+  <include file="$(find LMB_dispnet)/launch/dispnet.launch" />
+  <include file="$(find LMB_disparity_view)/launch/dispview.launch" />
+  <include file="$(find LMB_flownet)/launch/flownet.launch"/>
+  <include file="$(find LMB_flow_view)/launch/flowview.launch" />
+</launch>
+
