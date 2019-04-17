@@ -1,0 +1,29 @@
+<launch>
+  <node pkg="LMB_dispnet"
+        type="dispnet"
+        name="LMB_disparity"
+        clear_params="true"
+        output="screen"
+        respawn="true"
+  >
+    <rosparam param="crop__north_east_south_west">[0,0,0,0]</rosparam>
+    <param name="disparity_enhancement_shift" type="int" value="0"/>
+
+    <param name="with_caminfo_topic" type="bool" value="false"/>
+    <rosparam param="image_dimensions">[752,480]</rosparam>
+
+    <param name="negate_output" type="bool" value="true"/>
+
+    <param name="right_camera_is_reference" type="bool" value="false"/>
+
+    <param name="do_left_right_consistency" type="bool" value="true"/>
+    <param name="do_mirror_consistency" type="bool" value="false"/>
+    <param name="LRC_pixel_difference_threshold" type="double" value="2.0"/>
+    <param name="do_match_feasibility_check" type="bool" value="true"/>
+    <param name="do_dispmap_gradient_filter" type="bool" value="true"/>
+    <param name="DGF_pixel_threshold" type="double" value="1.0"/>
+    <param name="do_median_smoothing" type="bool" value="true"/>
+    <param name="weights_file" type="string" value="s11bc_600k.caffemodel.h5"/>
+  </node>
+</launch>
+
