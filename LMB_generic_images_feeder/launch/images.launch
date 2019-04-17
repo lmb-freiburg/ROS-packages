@@ -1,0 +1,36 @@
+<launch>
+  <node pkg="LMB_generic_images_feeder"
+        type="images_feeder"
+        name="example"
+        output="screen"
+  >
+    <rosparam param="topic_1">
+      [
+        /uvc_cam1_rect_mono, 
+        data/FlyingThings3D/left/0006.png,
+        data/FlyingThings3D/left/0007.png,
+        data/FlyingThings3D/left/0008.png,
+      ]
+    </rosparam>
+    <rosparam param="topic_2">
+      [
+        /uvc_cam0_rect_mono, 
+        data/FlyingThings3D/right/0006.png,
+        data/FlyingThings3D/right/0007.png,
+        data/FlyingThings3D/right/0008.png,
+      ]
+    </rosparam>
+
+    <rosparam param="K_camera_intrinsics_matrix">
+      [
+        1050, 0, 479.5,
+        0, 1050, 269.5,
+        0, 0, 1
+      ]
+    </rosparam>
+
+    <param name="repetitions" type="int" value="0"/>
+    <param name="fps" type="double" value="5.0"/>
+  </node>
+</launch>
+
