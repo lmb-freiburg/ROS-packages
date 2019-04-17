@@ -1,0 +1,15 @@
+<launch>
+  <node pkg="LMB_flownet"
+        type="flownet"
+        name="LMB_flownet"
+  >
+
+    <param name="flownet_variant" type="string" value="FlowNet2-cssR" /> 
+    <!-- Options: adjacent-frames, to-first-frame -->
+    <param name="mode" type="string" value="adjacent-frames"/>
+
+    <param name="do_forward_backward_consistency" type="bool" value="true"/>
+    <param name="FBC_pixel_difference_threshold" type="double" value="2.0"/>
+    <param name="do_match_feasibility_check" type="bool" value="true"/>
+  </node> 
+</launch>
