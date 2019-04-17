@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="LMB_flow_view"
+        type="flow_view"
+        name="LMB_flow_view"
+  />
+  <param name="viz_type" type="string" value="middlebury"/>
+  <param name="viz_scale" type="double" value="30.0"/>
+</launch>
