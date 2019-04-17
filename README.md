@@ -10,6 +10,8 @@ Non-commercial, for research purposes only.
 
 
 Author: Nikolaus Mayer, 2019
+
 This repository does not accept pull requests.
+
 The software in this repository is part of the Horizon2020 project [Trimbot2020](www.trimbot2020.org).
 
